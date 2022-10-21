@@ -10,6 +10,7 @@ class SelectComponent extends Component
     public $placeholder;
     public $values;
     public $keys;
+    public $default;
 
 
     /**
@@ -17,12 +18,13 @@ class SelectComponent extends Component
      *
      * @return void
      */
-    public function __construct( $name, $placeholder, $values, $keys)
+    public function __construct( $name, $placeholder, $values, $keys, $default)
     {
         $this->name =$name ;
         $this->placeholder =$placeholder;
         $this->values =$values;
         $this->keys =$keys;
+        $this->default =$default;
 
     }
 

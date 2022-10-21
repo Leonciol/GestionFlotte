@@ -12,8 +12,8 @@
 		<input type="text" name="lastname" placeholder="lastname" value="{{$user->lastname}}">
         <input type="text" name="firstname" placeholder="firstname" value="{{$user->firstname}}">
         <input type="email" name="email" placeholder="email" value="{{$user->email}}">
-        <x-selectComponent name="roles_id" placeholder="choisir un role" :values="$roles" :keys="$keyRoles"/>
-        <x-selectComponent name="agences_id" placeholder="choisir une agence" :values="$agences" :keys="$keyAgences"/>
+        <x-selectComponent name="roles_id" placeholder="Choisir un Role" :default="$user->roles_id" :values="$roles" :keys="$keyRoles"/>
+        <x-selectComponent name="agences_id" placeholder="Choisir une Agence" :default="$user->agences_id" :values="$agences" :keys="$keyAgences"/>
 
 		<input type="submit" name="valider" value="Valider" >
 

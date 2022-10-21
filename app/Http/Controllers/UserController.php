@@ -9,6 +9,8 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+
+
 class UserController extends Controller
 {
     /**
@@ -17,7 +19,19 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+        {
+        //  return (var_dump(auth()->user()->roles_id));
+        switch(auth()->user()->roles_id){
+            case 1: return redirect(route('commandes.index'));
+            break;
+            case 2: return redirect(route('fournisseurs.index'));
+            break;
+            case 3: return redirect(route('agences.index'));
+            break;
+            case 4: return redirect(route('agences.index'));
+            break;
+
+        }
         //On récupère tous les Post
     $users = User::latest()->get();
 

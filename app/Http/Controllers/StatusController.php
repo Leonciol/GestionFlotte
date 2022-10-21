@@ -50,9 +50,9 @@ class StatusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Status $status)
     {
-        //
+        return view("status.show", compact("status"));
     }
 
     /**
@@ -61,9 +61,9 @@ class StatusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Status $status)
     {
-        //
+        return view("status.edit", compact("status"));
     }
 
     /**
@@ -73,9 +73,15 @@ class StatusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Status $status)
     {
-        //
+        $status->update([
+            "label" => $request->label,
+
+        ]);
+
+        // 4. On affiche le Post modifié : route("posts.show")
+        return redirect(route("status.show", $status));
     }
 
     /**
@@ -84,8 +90,12 @@ class StatusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Status $status)
     {
-        //
+        // On les informations du $user de la table "users"
+    $status->delete();
+
+    // Redirection route "users.index"
+    return redirect(route('status.index'));
     }
 }

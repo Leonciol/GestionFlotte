@@ -10,7 +10,7 @@
 		<!-- Le token CSRF -->
 		@csrf
 
-		<input type="text" name="label" placeholder="nom du role">
+		<input type="text" name="label" placeholder="Nom du Role">
 
 		<input type="submit" name="valider" value="Valider" >
 

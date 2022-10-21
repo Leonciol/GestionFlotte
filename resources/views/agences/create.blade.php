@@ -1,5 +1,5 @@
 @extends("layouts.app")
-@section("title", "Créer un agence")
+@section("title", "Créer une agence")
 @section("content")
 
 	<h1>Créer une agence</h1>
@@ -10,7 +10,7 @@
 		<!-- Le token CSRF -->
 		@csrf
 
-		<input type="text" name="name" placeholder="nom du agence">
+		<input type="text" name="name" placeholder="Nom de l'Agence">
 
 		<input type="submit" name="valider" value="Valider" >
 

@@ -20,7 +20,6 @@ class CreateVehicules extends Migration
             $table->datetime('last_maintenance');
             $table->integer('nb_kilometrage');
             $table->integer('nb_serie');
-            $table->foreignId('user_id')->nullable()->constrained('users');
             $table->foreignId('statuses_id')->nullable()->constrained('statuses');
             $table->foreignId('fournisseurs_id')->nullable()->constrained('fournisseurs');
             $table->timestamps();

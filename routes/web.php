@@ -6,6 +6,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AgenceController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\VehiculeController;
 use App\Http\Controllers\FournisseurController;
 
@@ -21,7 +22,7 @@ use App\Http\Controllers\FournisseurController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::resource("users", UserController::class)->middleware(['auth']);
@@ -30,5 +31,6 @@ Route::resource("fournisseurs", FournisseurController::class)->middleware(['auth
 Route::resource("roles", RoleController::class)->middleware(['auth']);
 Route::resource("status", StatusController::class)->middleware(['auth']);
 Route::resource("vehicules", VehiculeController::class)->middleware(['auth']);
+Route::resource("commandes", CommandeController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';

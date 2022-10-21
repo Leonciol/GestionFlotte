@@ -21,13 +21,11 @@ class Vehicule extends Model
         'nb_kilometrage',
         'nb_serie',
         'user_id',
-        'status_id',
+        'statuses_id',
         'fournisseurs_id',
     ];
 
-    public function user(){
-        return $this->belongsTo(User::class);
-   }
+
    public function status(){
     return $this->belongsTo(Status::class, "statuses_id");
 }

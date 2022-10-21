@@ -1,8 +1,8 @@
 @extends("layouts.app")
-@section("title", "modifier un fournisseur")
+@section("title", "Modifier un fournisseur")
 @section("content")
 
-	<h1>modifier un fournisseur</h1>
+	<h1>Modifier un Fournisseur</h1>
 	<!-- Le formulaire est géré par la route "fournisseurs.update" -->
 	<form method="post" action="{{ route('fournisseurs.update',$fournisseur->id) }}" enctype="multipart/form-data" >
 

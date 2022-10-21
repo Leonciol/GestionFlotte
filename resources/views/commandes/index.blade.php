@@ -1,12 +1,13 @@
 @extends("layouts.app")
-@section("title", "Tous les status ")
+@section("title", "Toutes les commandes")
 @section("content")
 
-	<h1>Tous les status</h1>
+
+	<h1>Toutes les commandes</h1>
 
 	<p>
 		<!-- Lien pour créer un nouvel article : "posts.create" -->
-		<a href="{{ route('status.create') }}" title="Créer un status" >Créer un nouveau status</a>
+		<a href="{{ route('commandes.create') }}" title="Créer un article" >Créer une nouvelle commande</a>
 	</p>
 
 	<!-- Le tableau pour lister les articles/posts -->
@@ -19,19 +20,15 @@
 		</thead>
 		<tbody>
 			<!-- On parcourt la collection de Post -->
-			@foreach ($statuses as $status)
+			@foreach ($commandes as $commande)
 			<tr>
 				<td>
 					<!-- Lien pour afficher un Post : "posts.show" -->
-					<a href="{{ route('status.show', $status) }}" title="Lire l'article" >{{ $status->label }} </a>
+					<a href="{{ route('commandes.show', $commande) }}" title="Voir le commande" >{{ $commande->id }}</a>
 				</td>
 				<td>
-					<!-- Lien pour modifier un status : "status.edit" -->
-					<a href="{{ route('status.edit', $status) }}" title="Modifier l'article" >Modifier</a>
-				</td>
-				<td>
-					<!-- Formulaire pour supprimer un status : "status.destroy" -->
-					<form method="POST" action="{{ route('status.destroy', $status) }}" >
+					<!-- Formulaire pour supprimer un commande : "commandes.destroy" -->
+					<form method="POST" action="{{ route('commandes.destroy', $commande) }}" >
 						<!-- CSRF token -->
                             @csrf
                             <!-- <input type="hidden" name="_method" value="DELETE"> -->

@@ -12,14 +12,11 @@
 
 		<input type="text" name="models" placeholder="models">
         <input type="text" name="marque" placeholder="marque">
-        <input type="date" name="last_maintenance" placeholder="last_maintenance">
+        <label for="">Dernière maintenance: </label><input type="date" name="last_maintenance" >
         <input type="text" name="nb_kilometrage" placeholder="nb_kilometrage">
         <input type="text" name="nb_serie" placeholder="nb_serie">
-        <x-selectComponent name="status_id" placeholder="choisir un status" :values="$status" :keys="$keyStatus"/>
-        <x-selectComponent name="fournisseur_id" placeholder="choisir un fournisseur" :values="$fournisseurs" :keys="$keyFournisseurs"/>
-
-        <x-selectComponent name="user_id" placeholder="choisir un utilisateur" :values="$users" :keys="$keyUsers"/>
-
+        <x-selectComponent name="status_id" placeholder="choisir un status" :default="null" :values="$status" :keys="$keyStatus"/>
+        <x-selectComponent name="fournisseur_id" placeholder="choisir un fournisseur" :default="null" :values="$fournisseurs" :keys="$keyFournisseurs"/>
 		<input type="submit" name="valider" value="Valider" >
 
 	</form>

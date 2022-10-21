@@ -10,14 +10,11 @@
 		<!-- Le token CSRF -->
 		@csrf
 
-		<input type="text" name="lastname" placeholder="lastname">
-        <input type="text" name="firstname" placeholder="firstname">
-        <input type="email" name="email" placeholder="email">
-        <x-selectComponent name="roles_id" placeholder="choisir un role" :values="$roles" :keys="$keyRoles"/>
-        <x-selectComponent name="agences_id" placeholder="choisir une agence" :values="$agences" :keys="$keyAgences"/>
-
-
-
+		<input type="text" name="lastname" placeholder="Nom..">
+        <input type="text" name="firstname" placeholder="Prénom..">
+        <input type="email" name="email" placeholder="Email..">
+        <x-selectComponent name="roles_id" placeholder="Choisir un Role" :default="null" :values="$roles" :keys="$keyRoles"/>
+        <x-selectComponent name="agences_id" placeholder="Choisir une Agence"  :default="null" :values="$agences" :keys="$keyAgences"/>
 
 		<input type="submit" name="valider" value="Valider" >
 

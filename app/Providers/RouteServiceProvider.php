@@ -17,6 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
+
     public const HOME = '/users';
 
     /**
@@ -35,6 +36,13 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //TODO: redirection en fonction du role
+        // switch(Auth::user()->role){
+        //     case 1:public const HOME = '/users';
+        //     break;
+        //     default: public const HOME ='/users';
+        //     break;
+        // }
         $this->configureRateLimiting();
 
         $this->routes(function () {

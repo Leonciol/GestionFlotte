@@ -1,14 +1,12 @@
 @extends("layouts.app")
-@section("title", $vehicule->marque)
+@section("title", $status->label)
 @section("content")
 
-	<h1>{{ $vehicule->marque }} {{ $vehicule->models }}</h1>
 
 
-	<div><h1>Derniere maintenance: </h1>{{ $vehicule->last_maintenance }}</div>
-    <div><h1>Numéro de serie: </h1>{{ $vehicule->nb_serie }}</div>
-    <div><h1>nombre de kilomètre: </h1>{{ $vehicule->nb_kilometrage }}</div>
+	<div><h1>Status: </h1>{{ $status->label }}</div>
 
-	<p><a href="{{ route('vehicules.index') }}" title="Retourner a la liste des vehicules" >Retourner a la liste des vehicules</a></p>
+
+	<p><a href="{{ route('status.index') }}" title="Retourner a la liste des status" >Retourner a la liste des status</a></p>
 
 @endsection

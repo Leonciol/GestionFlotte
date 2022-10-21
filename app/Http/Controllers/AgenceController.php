@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Agence;
 use Illuminate\Http\Request;
 
@@ -94,6 +95,11 @@ class AgenceController extends Controller
      */
     public function destroy(Agence $agence)
     {
+        $user = User::where('agences_id',  $agence->id)->first();
+        if($user !== null){
+            $user->delete();
+        }
+
         // On les informations du $user de la table "users"
     $agence->delete();
 

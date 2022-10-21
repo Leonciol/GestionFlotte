@@ -18,6 +18,10 @@ class VehiculeController extends Controller
     public function index()
     {
         //On récupère tous les Post
+        // $user = User::all();
+        // if(auth()->user()->roles_id == 2){
+        //     $vehicule = DB::table('vehicule')->where('fournisseurs_id', 2)
+        // }
     $vehicules = Vehicule::latest()->get();
 
     // On transmet les USERS à la vue
@@ -31,13 +35,11 @@ class VehiculeController extends Controller
      */
     public function create()
     {
-        $keyUsers=["firstname", "lastname"];
         $keyStatus=["label"];
         $keyFournisseurs=["name"];
         $fournisseurs = Fournisseur::all();
         $status = Status::all();
-        $users = User::all();
-        return view("vehicules.create",["users"=>$users, "status"=>$status,"fournisseurs"=>$fournisseurs, "keyFournisseurs"=>$keyFournisseurs, "keyStatus"=>$keyStatus, "keyUsers"=>$keyUsers]);
+        return view("vehicules.create",["status"=>$status,"fournisseurs"=>$fournisseurs, "keyFournisseurs"=>$keyFournisseurs, "keyStatus"=>$keyStatus]);
     }
 
     /**
@@ -54,7 +56,6 @@ class VehiculeController extends Controller
         $vehicule->last_maintenance = $request->last_maintenance;
         $vehicule->nb_kilometrage = $request->nb_kilometrage;
         $vehicule->nb_serie = $request->nb_serie;
-        $vehicule->user_id = $request->user_id;
         $vehicule->statuses_id = $request->status_id;
         $vehicule->fournisseurs_id = $request->fournisseurs_id;
 
@@ -84,10 +85,8 @@ class VehiculeController extends Controller
     public function edit(Vehicule $vehicule)
     {
         $status = Status::all();
-        $users = User::all();
-        $keyUsers=["firstname", "lastname"];
         $keyStatus=["label"];
-        return view("vehicules.edit", compact("vehicule"), ["users"=>$users, "status"=>$status, "keyStatus"=>$keyStatus, "keyUsers"=>$keyUsers]);
+        return view("vehicules.edit", compact("vehicule"), [ "status"=>$status, "keyStatus"=>$keyStatus,]);
     }
 
     /**
@@ -99,16 +98,16 @@ class VehiculeController extends Controller
      */
     public function update(Request $request, Vehicule $vehicule)
     {
-
     // 3. On met à jour les informations du User
     $vehicule->update([
+
         "last_maintenance" =>$request->last_maintenance,
         "nb_kilometrage" => $request->nb_kilometrage,
-        "user_id" => $request->user_id,
         "statuses_id" => $request->status_id,
 
 
     ]);
+
 
     // 4. On affiche le Post modifié : route("posts.show")
     return redirect(route("vehicules.show", $vehicule));

@@ -23,6 +23,7 @@ class NavbarComponent extends Component
      */
     public function render()
     {
-        return view('components.navbar-component');
+        $user = auth()->user();
+        return view('components.navbar-component', compact('user'));
     }
 }
