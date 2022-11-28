@@ -11,7 +11,7 @@
 	</p>
 
 	<!-- Le tableau pour lister les articles/posts -->
-	<table border="1" >
+	<table class="cinereousTable" >
 		<thead>
 			<tr>
 				<th>Nom</th>

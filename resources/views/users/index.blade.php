@@ -7,11 +7,11 @@
 
 	<p>
 		<!-- Lien pour créer un nouvel article : "posts.create" -->
-		<a href="{{ route('users.create') }}" title="Créer un article" >Créer un nouveau utilisateurs</a>
+		<a href="{{ route('users.create') }}" class="newuser" title="Créer un article" >Créer un nouveau utilisateurs</a>
 	</p>
 
 	<!-- Le tableau pour lister les articles/posts -->
-	<table border="1" >
+	<table class="cinereousTable">
 		<thead>
 			<tr>
 				<th>Nom</th>
@@ -37,7 +37,7 @@
                             @csrf
                             <!-- <input type="hidden" name="_method" value="DELETE"> -->
 						@method("DELETE")
-						<input type="submit" value="x Supprimer" >
+						<input class="button-24" type="submit" value="x Supprimer" >
 					</form>
 				</td>
 			</tr>
