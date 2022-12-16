@@ -11,16 +11,16 @@
         @method('PUT')
         <div style="display:flex; align-items:center;">
             <p>Dernière maintenance: </p>
-		<input type="date" name="last_maintenance" placeholder="last_maintenance" value="{{$vehicule->last_maintenance}}">
+		<input class="Table" type="date" name="last_maintenance" placeholder="last_maintenance" value="{{$vehicule->last_maintenance}}">
         <p>Nombre de kilomètre: </p>
-        <input type="text" name="nb_kilometrage" placeholder="nb_kilometrage" value="{{$vehicule->nb_kilometrage}}">
+        <input class="Table" type="text" name="nb_kilometrage" placeholder="nb_kilometrage" value="{{$vehicule->nb_kilometrage}}">
         <x-selectComponent name="status_id" placeholder="choisir un status" :default="$vehicule->statuses_id" :values="$status" :keys="$keyStatus"/>
         </div>
 
 
 
 
-		<input type="submit" name="valider" value="Valider" >
+		<input class="b25" type="submit" name="valider" value="Valider" >
 
 	</form>
 

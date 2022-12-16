@@ -10,9 +10,9 @@
 		<!-- Le token CSRF -->
 		@csrf
 
-		<input type="text" name="name" placeholder="Nom du Fournisseur">
+		<input class="Table" type="text" name="name" placeholder="Nom du Fournisseur">
 
-		<input type="submit" name="valider" value="Valider" >
+		<input class="b25" type="submit" name="valider" value="Valider" >
 
 	</form>
 

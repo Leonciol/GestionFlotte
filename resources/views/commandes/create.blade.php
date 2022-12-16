@@ -25,7 +25,7 @@
 </div>
 
 
-		<input type="submit" name="valider" value="Valider" >
+		<input class="b25" type="submit" name="valider" value="Valider" >
 
 	</form>
 

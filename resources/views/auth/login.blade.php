@@ -1,10 +1,11 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            
         </x-slot>
+
+        <div class="login-box">
+        <h2>Login</h2>
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -16,14 +17,14 @@
             @csrf
 
             <!-- Email Address -->
-            <div>
+            <div class="user-box">
                 <x-label for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
             <!-- Password -->
-            <div class="mt-4">
+            <div class="user-box" class="mt-4">
                 <x-label for="password" :value="__('Mot de passe')" />
 
                 <x-input id="password" class="block mt-1 w-full"
@@ -33,12 +34,13 @@
             </div>
 
             <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Se souvenir de moi') }}</span>
-                </label>
+            <div class="item">
+                <div class="checkbox-circle">
+                    <input type="checkbox" id="checkbox-circle1" name="check">
+                    <label for="checkbox-circle1" class="ml-2 text-sm text-gray-600 noir">{{ __('Se souvenir de moi') }}</label>
+                </div>
             </div>
+
             <div class="flex items-center justify-end mt-4">
 
                 @if (Route::has('password.request'))
@@ -47,7 +49,11 @@
                     </a>
                 @endif
 
-                <x-button class="ml-3">
+                <x-button class="ml-3 user-box btn2">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
                     {{ __('Se connecter') }}
                 </x-button>
             </div>

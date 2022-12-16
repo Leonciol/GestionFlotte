@@ -33,7 +33,7 @@
                             @csrf
                             <!-- <input type="hidden" name="_method" value="DELETE"> -->
 						@method("DELETE")
-						<input type="submit" value="x Supprimer" >
+						<input class="button-24" type="submit" value="x Supprimer" >
 					</form>
 				</td>
 			</tr>

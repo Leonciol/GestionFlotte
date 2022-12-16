@@ -9,13 +9,13 @@
 		<!-- Le token CSRF -->
 		@csrf
         @method('PUT')
-		<input type="text" name="lastname" placeholder="lastname" value="{{$user->lastname}}">
-        <input type="text" name="firstname" placeholder="firstname" value="{{$user->firstname}}">
-        <input type="email" name="email" placeholder="email" value="{{$user->email}}">
+		<input class="Table" type="text" name="lastname" placeholder="lastname" value="{{$user->lastname}}">
+        <input class="Table" type="text" name="firstname" placeholder="firstname" value="{{$user->firstname}}">
+        <input class="Table" type="email" name="email" placeholder="email" value="{{$user->email}}">
         <x-selectComponent name="roles_id" placeholder="Choisir un Role" :default="$user->roles_id" :values="$roles" :keys="$keyRoles"/>
         <x-selectComponent name="agences_id" placeholder="Choisir une Agence" :default="$user->agences_id" :values="$agences" :keys="$keyAgences"/>
 
-		<input type="submit" name="valider" value="Valider" >
+		<input class="b25" type="submit" name="valider" value="Valider" >
 
 	</form>
 

@@ -5,19 +5,21 @@
 	<h1>Créer un utilisateur</h1>
 
 	<!-- Le formulaire est géré par la route "users.store" -->
+	<table class="cinereousTable">
 	<form method="POST" action="{{ route('users.store') }}" enctype="multipart/form-data" >
 
 		<!-- Le token CSRF -->
 		@csrf
 
-		<input type="text" name="lastname" placeholder="Nom..">
-        <input type="text" name="firstname" placeholder="Prénom..">
-        <input type="email" name="email" placeholder="Email..">
+		<input class="Table" type="text" class="form__field" name="lastname" placeholder="Nom..">
+        <input class="Table" type="text" class="form__field" name="firstname" placeholder="Prénom..">
+        <input class="Table" type="email" class="form__field" name="email" placeholder="Email..">
         <x-selectComponent name="roles_id" placeholder="Choisir un Role" :default="null" :values="$roles" :keys="$keyRoles"/>
         <x-selectComponent name="agences_id" placeholder="Choisir une Agence"  :default="null" :values="$agences" :keys="$keyAgences"/>
 
-		<input type="submit" name="valider" value="Valider" >
+		<input class="b25" type="submit" name="valider" value="Valider" >
 
 	</form>
+	</table>
 
 @endsection

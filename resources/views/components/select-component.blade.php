@@ -1,7 +1,7 @@
 
 
 <div>
-    <select name="{{$name}}">
+    <select class="deroulant" name="{{$name}}">
         <option value="">{{$placeholder}} </option>
 
     @foreach ($values as $v )

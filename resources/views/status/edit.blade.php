@@ -10,9 +10,9 @@
 		@csrf
         @method('PUT')
 
-        <input type="text" name="label"  value="{{$status->label}}">
+        <input class="Table" type="text" name="label"  value="{{$status->label}}">
 
-		<input type="submit" name="valider" value="Valider" >
+		<input class="b25" type="submit" name="valider" value="Valider" >
 
 	</form>
 

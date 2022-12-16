@@ -9,10 +9,10 @@
 		<!-- Le token CSRF -->
 		@csrf
         @method('PUT')
-		<input type="text" name="name" placeholder="name" value="{{$agence->name}}">
+		<input class="Table" type="text" name="name" placeholder="name" value="{{$agence->name}}">
 
 
-		<input type="submit" name="valider" value="Valider" >
+		<input class="b25" type="submit" name="valider" value="Valider" >
 
 	</form>
 
